@@ -1,0 +1,211 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Medicine Traking Ledger.",
+    "version": "1.0.0",
+    "title": "Medicine Tracking Ledger",
+
+    "contact": {
+      "email": "tjagadeesh77@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/dsct",
+
+  "schemes": ["http"],
+  "paths": {
+    "/DrugCreation": {
+      "post": {
+        "summary": "DrugCreation",
+        "description": "DrugCreation",
+        "operationId": "DrugCreation",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Creation of Drug",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DR"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/IssueAuth": {
+      "post": {
+        "summary": "IssueAuth",
+        "description": "IssueAuth",
+        "operationId": "IssueAuth",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Issuing Authority",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/IA"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/Order_Delear": {
+      "post": {
+        "summary": "Order by Delar",
+        "description": "Order by Delar",
+        "operationId": "Order_Delear",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Order from Delear",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DR"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/Order_Hosp": {
+      "post": {
+        "summary": "Order from Hosp",
+        "description": "Order by Hosp",
+        "operationId": "Order_Hosp",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Order from Delear",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DR"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/DrugHist": {
+      "post": {
+        "summary": "Get Drug History",
+        "description": "Get Drug History",
+        "operationId": "DrugHist",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "DR object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DrugId"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DrugId"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "DR": {
+      "type": "object",
+      "properties": {
+        "DrugId": {
+          "type": "string",
+          "description": "DrugId"
+        },
+        "DrugId": {
+          "type": "string",
+          "description": "DrugId"
+        },
+        "DrugName": {
+          "type": "string",
+          "description": "DrugName"
+        },
+        "Price": {
+          "type": "string",
+          "description": "Price"
+        },
+        "Manufacturer": {
+          "type": "string",
+          "description": "Manufacturer"
+        },
+        "MFGDate": {
+          "type": "string",
+          "description": "MFGDate"
+        },
+        "ExpDate": {
+          "type": "string",
+          "description": "ExpDate"
+        },
+        "BatchCode": {
+          "type": "string",
+          "description": "BatchCode"
+        },
+        "Status": {
+          "type": "string",
+          "description": "status"
+        }
+      }
+    },
+    "DrugId": {
+      "type": "object",
+      "properties": {
+        "DrugId": {
+          "type": "string",
+          "description": "DrugId"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
